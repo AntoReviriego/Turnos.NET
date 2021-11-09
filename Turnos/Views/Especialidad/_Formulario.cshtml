@@ -1,0 +1,17 @@
+﻿@model Turnos.Models.EspecialidadModel
+
+
+<div class="row">
+    <div class="input-field col s12 m12 l12">
+        <i class="material-icons prefix">face</i>
+        <input asp-for="Descripcion" type="text" class="validate">
+        <label asp-for="Descripcion"></label>
+        <span asp-validation-for="Descripcion" class = "red-text"></span>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

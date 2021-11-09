@@ -1,0 +1,39 @@
+﻿@model Turnos.Models.PacienteModel
+
+
+<div class="row">
+    <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <input asp-for="Nombre" type="text" class="validate">
+        <label asp-for="Nombre"></label>
+        <span asp-validation-for="Nombre" class = "red-text"></span>
+    </div>
+    <div class="input-field col s6">
+        <input asp-for="Apellido" type="text" class="validate">
+        <label asp-for="Apellido"></label>
+        <span asp-validation-for="Apellido"  class = "red-text"></span>
+    </div>
+    <div class="input-field col col s12 m12 l12">
+        <i class="material-icons prefix">place</i>
+        <input asp-for="Direccion" type="text" class="validate">
+        <label asp-for="Direccion"></label>
+        <span asp-validation-for="Direccion" class = "red-text"></span>
+    </div>
+    <div class="input-field col col s12 m12 l12">
+        <i class="material-icons prefix">phone</i>
+        <input asp-for="Telefono" type="tel" class="validate">
+        <label asp-for="Telefono"></label>
+        <span asp-validation-for="Telefono" class = "red-text"></span>
+    </div>
+    <div class="input-field col s12 m12 l12">
+        <i class="material-icons prefix">email</i>
+        <input asp-for="Email" type="text" class="validate">
+        <label asp-for="Email"></label>
+        <span asp-validation-for="Email" class = "red-text"></span>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

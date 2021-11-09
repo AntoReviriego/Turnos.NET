@@ -1,0 +1,53 @@
+﻿@model Turnos.Models.LoginModel
+
+    <div class="conteiner">
+        <div class="row">
+            <div class="col s12 m12 l12 push-s3 push-m3 push-l3">
+                <div class="card" id="Login" style="width:50%">
+                    <div class="section">
+                        <div class="card-image center">
+                            <i class="material-icons large blak-text"> account_circle </i>
+                            <p>LOGIN</p>
+                        </div>
+                        @if (TempData["mensaje"] != null)
+                         {
+                            <div class="alert center">
+                                <div class="card-content">
+                                    <p><i class="material-icons red-text">error_outline</i><span class="red-text">@TempData["mensaje"]</span></p>
+                                </div>
+                            </div>
+                         }
+                        <div class="card-content">
+                            <form asp-action="Login">
+                                <div class="row">
+                                    <div class="input-field col s12 m12 l12 center">
+                                        <i class="material-icons prefix">lock</i>
+                                        <input asp-for="Usuario" type="text" class="validate">
+                                        <label asp-for="Usuario"></label>
+                                        <span asp-validation-for="Usuario" class="red-text text-lighten-3"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12 m12 l12 center">
+                                        <i class="material-icons prefix">lock</i>
+                                        <input asp-for="Password" type="password" class="validate">
+                                        <label asp-for="Password"></label>
+                                        <span asp-validation-for="Password" class="red-text text-lighten-3"></span>
+                                    </div>
+                                </div>
+                                <div class="row center">
+                                    <div class="input-field  col s12 m12 l12">
+                                        <button class="btn waves-effect waves-light acento cian-4" type="submit" name="action">
+                                            Login
+                                            <i class="material-icons left">how_to_reg</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

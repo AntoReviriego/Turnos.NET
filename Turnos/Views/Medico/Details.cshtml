@@ -1,0 +1,47 @@
+﻿@model Turnos.Models.MedicoModel
+
+@{
+    ViewData["Title"] = "Detalle";
+}
+<partial name="~/Views/Shared/_ValidateSession.cshtml" />
+<h4>Detalle</h4>
+<div>
+    <h5>Médico</h5>
+    <div class="divider grey darken-2" tabindex="-1"></div>
+    <div class="row">
+        <div class="col s12 m6 l6 ">
+            <div class="card hoverable blue darken-1 div-center">
+                <div class="card-content white-text">
+                    <h5><span class="card-title"><b>@Html.DisplayFor(model => model.Nombre), @Html.DisplayFor(model => model.Apellido)</b></span></h5>
+                    <div class="divider" tabindex="-1"></div>
+                    <p class="pb-5">
+                        <b>@Html.DisplayNameFor(model => model.Direccion)</b> : @Html.DisplayFor(model => model.Direccion)
+                    </p>
+                    <p class="pb-5">
+                        <b>@Html.DisplayNameFor(model => model.Telefono)</b> : @Html.DisplayFor(model => model.Telefono)
+                    </p>
+                    <p class="pb-5">
+                        <b>@Html.DisplayNameFor(model => model.Email)</b> :  @Html.DisplayFor(model => model.Email)
+                    </p>
+                    <p class="pb-5">
+                        <b>@Html.DisplayNameFor(model => model.HorarioAtencionDesde)</b> : @Html.DisplayFor(model => model.HorarioAtencionDesde)
+                    </p>
+                    <p class="pb-5">
+                        <b>@Html.DisplayNameFor(model => model.HorarioAtencionHasta)</b> : @Html.DisplayFor(model => model.HorarioAtencionHasta)
+                    </p>
+                </div>
+                <div class="card-action blue-grey darken-2">
+                    <div class="btn-center">
+                        <a asp-action="Edit" asp-route-id="@Model.IdMedico">Editar</a>
+                        <a asp-action="Index">Volver al Listado</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdMedico">Editar</a> |
+    <a asp-action="Index">Volver al Listado</a>
+</div>

@@ -1,0 +1,76 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+<!DOCTYPE html>
+<link href="~/css/site.css" rel="stylesheet" />
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Turnos</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS MATERIALIZE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link href="~/css/materialize/css/materialize.min.css" rel="stylesheet" />
+    <!-- Compiled and minified CSS FULL CALENDAR -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.css" integrity="sha512-07Gk9CEkqoclvuF8LKmXbesY8ZGfiTOmmbkXt/GHU8WZfh3d37Kh8mmwSQ9zLJTyd1ztC9Bs8qRuvCEsc6yL6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.print.min.css" integrity="sha512-5TRYnynyaypDTPI2YvyZBI6T+MPcJM+qSke/cGQEI3Y+2TK9jBZ0xFg0V7Lff9Ik35bN0LiZ8RI3JLZmRHugVw==" crossorigin="anonymous" referrerpolicy="no-referrer" />*@
+</head>
+<body>
+    <header class="pb-50">
+        <nav>
+            <div class="nav-wrapper grey darken-3">
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="brand-logo center">Sistema de Turnos</a>
+                @if (Context.Session.GetString("User") != null)
+                {
+                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Especialidad" asp-action="Index">Especialidades</a></li>
+                        <li><a asp-area="" asp-controller="Medico" asp-action="Index">Médicos</a></li>
+                        <li><a asp-area="" asp-controller="Turno" asp-action="Index">Turnos</a></li>
+                        <li><a asp-area="" asp-controller="Login" asp-action="Logout">Logout</a></li>
+                    </ul>
+                }
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-area="" asp-controller="Especialidad" asp-action="Index">Especialidades</a></li>
+            <li><a asp-area="" asp-controller="Medico" asp-action="Index">Médicos</a></li>
+            <li><a asp-area="" asp-controller="Turno" asp-action="Index">Turnos</a></li>
+            <li><a asp-area="" asp-controller="Login" asp-action="Logout">Logout</a></li>
+        </ul>
+
+    </header>
+    <div class="container pb-50">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - Turnos - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>  NO FUNCIONA CON LA VERSION DE FULL CALENDAR*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha512-bnIvzh6FU75ZKxp0GXLH9bewza/OIw6dLVh9ICg0gogclmYGguQJWl8U30WpbsGTqbIiAwxTsbe76DErLq5EDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Compiled and minified JavaScript Moment (Formato de fechas) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="~/css/materialize/js/materialize.min.js"></script>
+    <!-- Compiled and minified JavaScript FULL CALENDAR-->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.10.0/dist/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/locale/es.js" integrity="sha512-PYIOcALve1S8ZeILHl4xldOiD1n/Go1qlHRojkNX6roXwBXgI7+0Mbe5g/Sirc1WUlorp9tnIwrpuNeTOaY87A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @*@await RenderSectionAsync("Scripts", required: false)*@
+    @RenderSection("Scripts", required: false)
+    <script>
+
+    </script>
+</body>
+</html>

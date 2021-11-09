@@ -1,0 +1,23 @@
+﻿@model Turnos.Models.EspecialidadModel
+@{
+    ViewData["Title"] = "Crear";
+}
+<partial name="~/Views/Shared/_ValidateSession.cshtml" />
+<h3>Registar una nueva Especialidad</h3>
+<h4>Especialidad</h4>
+<div class="divider grey darken-2" tabindex="-1"></div>
+<div class="row">
+    <div class="col s12 m12 l12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly"></div>
+            <partial name="_Formulario" />
+            <div class="input-field btn-center">
+                <button class="btn waves-effect waves-light acento cian-4" type="submit" name="action">
+                    Registrar
+                    <i class="material-icons left">how_to_reg</i>
+                </button>
+                <a asp-action="Index" class="waves-effect waves-light btn-small grey darken-4"><i class="material-icons left">undo</i>Volver al Listado</a>
+            </div>
+        </form>
+    </div>
+</div>

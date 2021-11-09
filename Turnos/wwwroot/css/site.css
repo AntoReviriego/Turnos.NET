@@ -1,0 +1,64 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+/*  ALERTS  */
+.alert .card-content span{
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-right: 4px;
+} 
+div > p .material-icons{
+    font-size: 1.5em;
+    position: relative;
+    top: 5px;
+    margin-right: 0.5em;
+}
+
+
+.pb-50 {
+    padding-bottom: 50px;
+}
+
+.pb-5 {
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.div-center{
+    text-align: center;
+    margin: auto;
+}
+
+.btn-center {
+    display:flex;
+    justify-content:center;    
+}
+
+.btn-center a {
+    margin-left: 20px;
+    margin-top: 3px;
+}
+
+.h-100 {
+    height: 100% !important;
+}
+
+/* LOGIN */
+#Login {
+    /*background: linear-gradient(#e66465, #9198e5);*/
+    background: linear-gradient( #566573, #9198e5);
+    color: white;
+}
+
+#Login input[type=text], input[type=password]{
+    color: white;
+}
+
+#Login .active{ 
+    color: white;
+}
+
+#Login .input-field .prefix.active {
+    color: white;
+}

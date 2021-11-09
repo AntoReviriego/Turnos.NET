@@ -1,0 +1,27 @@
+﻿@model Turnos.Models.EspecialidadModel
+<partial name="~/Views/Shared/_ValidateSession.cshtml" />
+<h4>Está usted seguro de eliminar el siguiente Especilidad?</h4>
+<div>
+    <h5>Especilidad</h5>
+    <div class="divider grey darken-2" tabindex="-1"></div>
+    <div class="row">
+        <div class="col s12 m6 l6 ">
+            <div class="card hoverable orange lighten-1 div-center">
+                <div class="card-content white-text">
+                    <h5><span class="card-title"><b>@Html.DisplayFor(model => model.Descripcion)</b></span></h5>
+                </div>
+                <div class="card-action blue-grey darken-2">
+                    <form asp-action="Delete">
+
+                        <div class="btn-center">
+                            <input type="hidden" asp-for="IdEspecialidad" />
+                            <input type="submit" value="Eliminar" class="waves-effect waves-light btn-small  deep-orange darken-4">
+                            <a asp-action="Index">Volver al Listado</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿@model Turnos.Models.TurnoModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<partial name="~/Views/Shared/_ValidateSession.cshtml" />
+<h4>TurnoModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdPaciente" class="control-label"></label>
+                <select asp-for="IdPaciente" class ="form-control" asp-items="ViewBag.IdPaciente"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdMedico" class="control-label"></label>
+                <select asp-for="IdMedico" class ="form-control" asp-items="ViewBag.IdMedico"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaHoraInicio" class="control-label"></label>
+                <input asp-for="FechaHoraInicio" class="form-control" />
+                <span asp-validation-for="FechaHoraInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaHoraFin" class="control-label"></label>
+                <input asp-for="FechaHoraFin" class="form-control" />
+                <span asp-validation-for="FechaHoraFin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

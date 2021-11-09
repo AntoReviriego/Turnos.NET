@@ -1,0 +1,51 @@
+﻿@model Turnos.Models.TurnoModel
+@Html.AntiForgeryToken() @*Genera el token oculto*@
+@{
+    ViewData["Title"] = "Asignación de Turnos";
+}
+<partial name="~/Views/Shared/_ValidateSession.cshtml" />
+
+<div class="row pb-5">
+    <div class="col s12 m6 l6">
+        <label asp-for="IdMedico">Médico</label>
+        <select asp-for="IdMedico" asp-items="ViewBag.IdMedico"></select>
+    </div>
+
+    <div class="col s12 m6 l6">
+        <label asp-for="IdPaciente">Paciente</label>
+        <select asp-for="IdPaciente" asp-items="ViewBag.IdPaciente"></select>
+    </div>
+</div>
+
+
+<div id="calendar">
+
+</div>
+<!-- Modal Structure -->
+<div id="modalTurno" class="modal">
+    <div class="modal-content">
+        <h4>Turno</h4>
+        <form>
+            <div>
+                <label>Inicio de cita</label>
+                <input type="text" id="txtFechaHoraInicio" readonly />
+            </div>
+            <div>
+                <label>Fin de la cita</label>
+                <input type="text" id="txtFechaHoraFin" readonly />
+            </div>
+            <div>
+                <label>Paciente</label>
+                <input type="text" id="txtPaciente" readonly />
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <div>
+            <a href="#" class="modal-close waves-effect waves-light btn"> Cancelar </a>
+            <a href="#" id="btnEliminar" class="modal-close waves-effect btn-flat waves-light btn red white-text"> Eliminar cita <i class="material-icons left">delete</i></a>
+            <a href="#" id="btnGuardar" class="modal-close waves-effect btn-flat waves-light btn green white-text"> Guardar <i class="material-icons left">event</i></a>
+        </div>
+
+    </div>
+</div>

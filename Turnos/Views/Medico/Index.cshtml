@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Turnos.Models.MedicoModel>
+
+@{
+    ViewData["Title"] = "Listado";
+}
+<partial name="~/Views/Shared/_ValidateSession.cshtml" />
+<h3 class="div-center">Listado de Médicos</h3>
+
+@if (TempData["mensaje"] != null)
+{
+    <div class="alert card @TempData["status"]">
+        <div class="card-content">
+            <p><i class="material-icons">check_circle</i><span>@TempData["mensaje"]</span></p>
+        </div>
+    </div>
+}
+<p>
+    <a class="btn-floating btn-large green darken-1" asp-action="Create"><i class="material-icons">person_add</i></a>
+</p>
+<table class="responsive-table highlight z-depth-3 blue lighten-5">
+    <thead class="blue darken-1 white-text">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorarioAtencionDesde)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HorarioAtencionHasta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HorarioAtencionDesde)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HorarioAtencionHasta)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdMedico"><i class="material-icons">edit</i></a>
+                    <a asp-action="Delete" asp-route-id="@item.IdMedico"><i class="material-icons red-text">delete</i></a>
+                    <a asp-action="Details" asp-route-id="@item.IdMedico"><i class="material-icons grey-text">info</i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
