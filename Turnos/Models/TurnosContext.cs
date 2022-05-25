@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 // ***************
 // GIT DIFF PRUEBA
 // ***************
+
+// SALTANDO AREA DE PREPARACION
 namespace Turnos.Models
 {
     public class TurnosContext : DbContext
