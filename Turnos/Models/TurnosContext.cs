@@ -1,5 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-
+using Microsoft.EntityFrameworkCore;
+//MODIFICACION DE GIT
+//NUEVA MODIFICACION DE PRUEBA EN GIT
 namespace Turnos.Models
 {
     public class TurnosContext : DbContext
